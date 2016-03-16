@@ -36,6 +36,25 @@
 }
 
 
+/* mixins for checkmarks in list items */
+
+@mixin interstitial-list-item-checkmark-blue {
+    max-width: 400px;
+    position: relative;
+    li:before {
+        background-image: url('../images/checkmark-blue.svg');
+        background-size:contain;
+        background-repeat: no-repeat;
+        content:'';
+        height: 13px;
+        left: 0px;
+        margin-top: 5px;
+        position:absolute;
+        width: 13px;
+    }
+}
+
+
 /* styles for parent interstitial page */
 
 
@@ -83,8 +102,8 @@
     }
     .interstitial-video-placeholder {
         background-color: #2c3e50;
-        height: 400px;
-        width: 600px;
+        height: 323px;
+        width: 570px;
         margin-right: 5%;
         max-width: 49%;
     }
@@ -102,8 +121,90 @@
         text-align: center;
     }
     .interstitial-video-copy-subheader {
+        font-size: 20px;
+        font-weight: 700;
         margin-bottom: 10px;
         text-align: center;
     }
+    .interstitial-video-list-header {
 
+    }
+    .interstitial-video-info-list {
+        @include interstitial-list-item-checkmark-blue;
+        margin: 10px 0 10px 25px;
+    }
+    .interstitial-video-list-item {
+        padding-left: 20px;
+    }
+    .interstitial-video-copy-endheader {
+        font-size: 18px;
+        font-weight: 700;
+    }
+}
+
+.interstitial-resources {
+    background-color: #2c3e50;
+    padding: 50px;
+    .interstitial-resources-header {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+}
+
+.interstitial-problem-cards {
+        padding: 50px;
+    .interstitial-problem-cards-header {
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+}
+
+.interstitial-get-in-touch {
+    @include flex;
+    @include flex-direction(column);
+    background-color: #2c3e50;
+    padding: 50px;
+    .interstitial-get-in-touch-header {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    .interstitial-get-in-touch-buttons {
+        @include flex;
+        @include flex-direction(row);
+        @include flex-justify(center);
+    }
+    .interstitial-call-our-mainline {
+        color: #ffffff;
+        font-size: 18px;
+        padding: 20px 50px;
+        margin: 0px 20px 0px 20px;
+        &:p:first-of-type {
+            border-bottom: 1px solid #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+    }
+    .interstitial-get-in-touch-button {
+        @include flex;
+        @include flex-align(center);
+        @include flex-direction(column);
+        border: solid 1px #ffffff;
+        border-radius: 7px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 20px 50px;
+        margin: 0px 20px 0px 20px;
+        text-align: center;
+    }
 }
